@@ -89,7 +89,8 @@ Get-PinnedRepo "https://github.com/pjsip/pjproject.git" $PjTag $PjCommit $Pj
 Copy-Item -Force (Join-Path $PSScriptRoot "config_site.h") (Join-Path $Pj "pjlib\include\pj\config_site.h")
 
 # Extra include/lib paths for cl.exe and link.exe (honored by MSBuild).
-$env:CL = "/I`"$Deps\include`" $env:CL"
+# BCG729_STATIC: bcg729 headers default to __declspec(dllimport); we link the static lib.
+$env:CL = "/I`"$Deps\include`" /DBCG729_STATIC $env:CL"
 $env:LINK = "/LIBPATH:`"$Deps\lib`" $env:LINK"
 
 Invoke-Checked msbuild @((Join-Path $Pj "pjproject-vs14.sln"), "/t:libpjproject", "/m", "/nologo", "/v:minimal",
