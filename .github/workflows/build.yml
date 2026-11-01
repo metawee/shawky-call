@@ -37,11 +37,11 @@ jobs:
           ./build-tests/Release/test_uri.exe
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
-      - name: Cache vcpkg binaries
-        uses: actions/cache@v4
+      - name: Restore vcpkg binary cache
+        uses: actions/cache/restore@v4
         with:
           path: ${{ runner.temp }}/vcpkg-cache
-          key: vcpkg-${{ hashFiles('build/build-deps.ps1') }}
+          key: vcpkg-x64-windows-static-2026.07.29
 
       - name: Build dependencies and Shawky Call
         shell: pwsh
@@ -50,6 +50,13 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path $env:VCPKG_DEFAULT_BINARY_CACHE | Out-Null
           ./build/build.ps1 -Work "${{ runner.temp }}/work"
+
+      - name: Save vcpkg binary cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/vcpkg-cache
+          key: vcpkg-x64-windows-static-2026.07.29
 
       - name: Show binary info
         shell: pwsh

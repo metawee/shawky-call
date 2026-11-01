@@ -64,6 +64,8 @@ Invoke-Checked (Join-Path $Vcpkg "vcpkg.exe") @("install", "--triplet", $Triplet
 $Installed = Join-Path $Vcpkg "installed\$Triplet"
 Copy-Item -Recurse -Force (Join-Path $Installed "include\*") (Join-Path $Deps "include")
 Copy-Item -Force (Join-Path $Installed "lib\*.lib") (Join-Path $Deps "lib")
+# pjproject's opus.c links "libopus.a" on MSVC (#pragma comment); vcpkg names it opus.lib.
+Copy-Item -Force (Join-Path $Deps "lib\opus.lib") (Join-Path $Deps "lib\libopus.a")
 
 # ---- bcg729 (G.729) --------------------------------------------------------
 $Bcg = Join-Path $Work "bcg729"
