@@ -64,6 +64,28 @@ jobs:
           Get-ChildItem out/ShawkyCall | Format-Table Name, Length
           Get-FileHash out/ShawkyCall/*.exe -Algorithm SHA256 | Format-List
 
+      - name: Smoke test (start, URL scheme registration, exit)
+        shell: pwsh
+        run: |
+          $exe = (Resolve-Path out/ShawkyCall/*.exe).Path
+          Remove-Item -Recurse -Force HKCU:\Software\Classes\shawkycall -ErrorAction SilentlyContinue
+          $p = Start-Process -FilePath $exe -ArgumentList "/minimized" -PassThru
+          Start-Sleep -Seconds 15
+          if ($p.HasExited) { throw "App exited early with code $($p.ExitCode)" }
+          Write-Host "App running, PID $($p.Id)"
+          $cmd = (Get-ItemProperty "HKCU:\Software\Classes\shawkycall\shell\open\command")."(default)"
+          $proto = Get-ItemProperty "HKCU:\Software\Classes\shawkycall" -Name "URL Protocol" -ErrorAction Stop
+          Write-Host "Registered command: $cmd"
+          $expected = "`"$exe`" `"%1`""
+          if ($cmd -ne $expected) { throw "Unexpected command. Expected: $expected" }
+          # Second instance must forward to the first and exit immediately.
+          $p2 = Start-Process -FilePath $exe -ArgumentList "/minimized" -PassThru
+          if (-not $p2.WaitForExit(10000)) { throw "Second instance did not exit (single instance broken)" }
+          Write-Host "Second instance exited with code $($p2.ExitCode)"
+          Start-Process -FilePath $exe -ArgumentList "/exit" -Wait
+          if (-not $p.WaitForExit(15000)) { throw "App did not exit on /exit" }
+          Write-Host "Smoke test passed"
+
       - uses: actions/upload-artifact@v4
         with:
           name: ShawkyCall-x64
