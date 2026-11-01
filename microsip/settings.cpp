@@ -19,6 +19,7 @@
 #include "stdafx.h"
 #include "settings.h"
 #include "Crypto.h"
+#include "../shawky/ShawkySecret.h" // SHAWKY:
 
 #include <algorithm>
 #include <vector>
@@ -41,44 +42,15 @@ static LONGLONG FileSize(const wchar_t* name)
     return size.QuadPart;
 }
 
+// SHAWKY: SIP password is protected with per-user DPAPI (see shawky/ShawkySecret.cpp)
+// instead of upstream's static _GLOBAL_KEY, which is not published and would live in the binary.
 bool IniDecrypt(CString& str)
 {
-    if (!str.IsEmpty()) {
-        bool res = false;
-        CByteArray arPassword;
-        MSIP::String2Bin(str, &arPassword);
-        MFC::CCrypto crypto;
-        CString key = (LPCTSTR)_GLOBAL_KEY;
-        if (crypto.DeriveKey(key)) {
-            try {
-                if (crypto.Decrypt(arPassword, str)) {
-                    res = true;
-                }
-            }
-            catch (CArchiveException* e) {
-            }
-        }
-        return res;
-    }
-    else {
-        return true;
-    }
+    return shawky::SecretDecrypt(str);
 }
 CString IniEncrypt(CString str)
 {
-    CString res;
-    MFC::CCrypto crypto;
-    CByteArray arPassword;
-    CString key = (LPCTSTR)_GLOBAL_KEY;
-    if (!str.IsEmpty() && crypto.DeriveKey(key)
-        && crypto.Encrypt(str, arPassword)
-        ) {
-        res = MSIP::Bin2String(&arPassword);
-    }
-    else {
-        res = str;
-    }
-    return res;
+    return shawky::SecretEncrypt(str);
 }
 
 void AccountSettings::Init()

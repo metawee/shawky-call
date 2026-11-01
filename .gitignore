@@ -1,0 +1,19 @@
+/_work/
+/out/
+/build-tests/
+microsip/x64/
+microsip/Release/
+microsip/Debug/
+*.user
+*.aps
+.vs/
+
+# Never commit employee configs or secrets
+*.ini
+!installer/example.ini
+*.pfx
+*.p12
+*.pvk
+*.key
+*.csv
+!tools/example-employees.csv

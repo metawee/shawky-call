@@ -1,0 +1,64 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests-linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run unit tests (gcc, ASan/UBSan)
+        run: |
+          cmake -S tests -B build-tests -DCMAKE_BUILD_TYPE=Debug
+          cmake --build build-tests
+          ./build-tests/test_uri
+
+  windows-x64:
+    runs-on: windows-2022
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - name: Unit tests (MSVC)
+        shell: pwsh
+        run: |
+          cmake -S tests -B build-tests -G "Visual Studio 17 2022" -A x64
+          cmake --build build-tests --config Release
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          ./build-tests/Release/test_uri.exe
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Cache vcpkg binaries
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/vcpkg-cache
+          key: vcpkg-${{ hashFiles('build/build-deps.ps1') }}
+
+      - name: Build dependencies and Shawky Call
+        shell: pwsh
+        env:
+          VCPKG_DEFAULT_BINARY_CACHE: ${{ runner.temp }}/vcpkg-cache
+        run: |
+          New-Item -ItemType Directory -Force -Path $env:VCPKG_DEFAULT_BINARY_CACHE | Out-Null
+          ./build/build.ps1 -Work "${{ runner.temp }}/work"
+
+      - name: Show binary info
+        shell: pwsh
+        run: |
+          Get-ChildItem out/ShawkyCall | Format-Table Name, Length
+          Get-FileHash out/ShawkyCall/*.exe -Algorithm SHA256 | Format-List
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ShawkyCall-x64
+          path: out/ShawkyCall/
+          if-no-files-found: error

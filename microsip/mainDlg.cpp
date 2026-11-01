@@ -21,6 +21,7 @@
 #define THIS_FILENAME "mainDlg.cpp"
 
 #include "mainDlg.h"
+#include "../shawky/ShawkyApp.h" // SHAWKY:
 #include "microsip.h"
 
 #include "Mmsystem.h"
@@ -2257,6 +2258,8 @@ LRESULT CmainDlg::OnCreated(WPARAM wParam, LPARAM lParam)
 
     PJCreate();
 
+    shawky::OnStartup(); // SHAWKY: repair shawkycall:// URL scheme registration (HKCU)
+
     if (lstrlen(theApp.m_lpCmdLine)) {
         CommandLine(theApp.m_lpCmdLine);
         theApp.m_lpCmdLine = NULL;
@@ -4376,6 +4379,10 @@ bool CmainDlg::CommandLine(CString params) {
     params.Trim();
     if (params.GetAt(0) == '"' && params.GetAt(params.GetLength() - 1) == '"') {
         params = params.Mid(1, params.GetLength() - 2);
+    }
+    // SHAWKY: shawkycall://call?phone=... (validated, normalized, dialed after registration)
+    if (shawky::TryHandleCommandLine(params)) {
+        return true;
     }
     if (!params.IsEmpty()) {
         if (params.Find(_T("msip:")) == 0) {

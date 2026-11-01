@@ -157,7 +157,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_x86);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -194,7 +195,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_x64);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <AdditionalOptions>/OPT:NOLBR /IGNORE:4099 /PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
@@ -227,7 +229,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_ARM64);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <AdditionalOptions>/OPT:NOLBR /IGNORE:4099 /PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
@@ -259,7 +262,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_x86);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -296,7 +300,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_x64);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -330,7 +335,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>chkstk_ms.lib;bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- SHAWKY: chkstk_ms.lib removed (MinGW helper for upstream prebuilt libs; our deps are built with MSVC) -->
+      <AdditionalDependencies>bcg729.lib;opus.lib;Wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\lib\;..\third_party\lib\;..\third_party\openssl\$(Platform)\lib\;..\third_party\ipp\$(Platform)\;..\third_party\opus\$(Platform)\;..\third_party\silk\$(Platform)\$(Configuration)\;..\third_party\ffmpeg\$(Platform)\;..\third_party\vpx\$(Platform)\;..\third_party\sdl\$(Platform)\;..\third_party\opencore-amrnb\$(Platform)\;..\third_party\vo-amrwbenc\$(Platform)\;..\third_party\opencore-amrwb\$(Platform)\;..\third_party\SQLiteCpp\$(Platform)\$(Configuration)\;..\third_party\bcg729\$(Platform)\;$(WindowsSDK_LibraryPath_ARM64);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -400,6 +406,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="lib\langpack.cpp" />
+    <!-- SHAWKY: Shawky Call sources (see SHAWKY_CHANGES.md) -->
+    <ClCompile Include="..\shawky\ShawkyApp.cpp" />
+    <ClCompile Include="..\shawky\ShawkySecret.cpp" />
+    <ClCompile Include="..\shawky\ShawkyStrings.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\shawky\ShawkyUri.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="LevelsSliderCtrl.cpp" />
     <ClCompile Include="lib\Markup.cpp" />
     <ClCompile Include="lib\MessageBoxX.cpp" />

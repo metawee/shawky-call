@@ -1,0 +1,65 @@
+<#
+.SYNOPSIS
+  Builds Shawky Call (x64 Release) and stages it in out\ShawkyCall.
+
+.DESCRIPTION
+  1. build-deps.ps1 (unless -SkipDeps)
+  2. Copies microsip\ and shawky\ next to pjproject (the upstream project
+     expects to sit inside the pjproject tree: ..\pjlib, ..\build\vs, ...)
+  3. msbuild microsip.vcxproj Release|x64 with MSVC v143
+  4. Stages the exe, the Arabic language pack and the license in out\ShawkyCall
+
+  Requires Visual Studio 2022 with "Desktop development with C++" and
+  "C++ MFC for latest v143 build tools (x86 & x64)".
+#>
+param(
+    [string]$Work = (Join-Path $PSScriptRoot "..\_work"),
+    [switch]$SkipDeps
+)
+
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+
+$Root = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
+$Work = [System.IO.Path]::GetFullPath($Work)
+$Toolset = "v143"
+
+function Invoke-Checked([string]$Exe, [string[]]$Arguments) {
+    Write-Host ">> $Exe $($Arguments -join ' ')"
+    & $Exe @Arguments
+    if ($LASTEXITCODE -ne 0) { throw "$Exe failed with exit code $LASTEXITCODE" }
+}
+
+if (-not $SkipDeps) {
+    & (Join-Path $PSScriptRoot "build-deps.ps1") -Work $Work
+}
+
+$Pj = Join-Path $Work "pjproject"
+$Deps = Join-Path $Work "deps"
+
+# Fresh copy of our sources inside the pjproject tree.
+foreach ($dir in @("microsip", "shawky")) {
+    $dst = Join-Path $Pj $dir
+    if (Test-Path $dst) { Remove-Item -Recurse -Force $dst }
+    Copy-Item -Recurse (Join-Path $Root $dir) $dst
+}
+
+$env:CL = "/I`"$Deps\include`""
+$env:LINK = "/LIBPATH:`"$Deps\lib`""
+
+Invoke-Checked msbuild @((Join-Path $Pj "microsip\microsip.vcxproj"), "/m", "/nologo", "/v:minimal",
+    "/p:Configuration=Release", "/p:Platform=x64", "/p:BuildToolset=$Toolset")
+
+$exe = Get-ChildItem -Recurse (Join-Path $Pj "microsip") -Filter "*.exe" |
+    Where-Object { $_.FullName -match "\\x64\\Release\\|\\Release\\" } |
+    Sort-Object LastWriteTime -Descending | Select-Object -First 1
+if (-not $exe) { throw "Built exe not found" }
+
+$Out = Join-Path $Root "out\ShawkyCall"
+if (Test-Path $Out) { Remove-Item -Recurse -Force $Out }
+New-Item -ItemType Directory -Force -Path $Out | Out-Null
+Copy-Item $exe.FullName $Out
+Copy-Item (Join-Path $Root "COPYING") $Out
+$lang = Join-Path $Root "lang\langpack_arabic.txt"
+if (Test-Path $lang) { Copy-Item $lang $Out }
+Write-Host "Built: $(Join-Path $Out $exe.Name)"

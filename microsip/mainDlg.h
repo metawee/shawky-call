@@ -24,10 +24,19 @@
 #include <pjsua-lib/pjsua.h>
 #include <pjsua-lib/pjsua_internal.h>
 
+// SHAWKY: pick the pjproject library for the target platform (x64 build)
+#if defined(_WIN64)
+#ifdef NDEBUG
+#pragma comment(lib, "libpjproject-x86_64-x64-vc14-Release-Static.lib")
+#else
+#pragma comment(lib, "libpjproject-x86_64-x64-vc14-Debug-Static.lib")
+#endif
+#else
 #ifdef NDEBUG
 #pragma comment(lib, "libpjproject-i386-Win32-vc14-Release-Static.lib")
 #else
 #pragma comment(lib, "libpjproject-i386-Win32-vc14-Debug-Static.lib")
+#endif
 #endif
 
 #include "MMNotificationClient.h"

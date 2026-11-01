@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.16)
+project(shawky_tests CXX)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(test_uri test_uri.cpp ../shawky/ShawkyUri.cpp)
+if(MSVC)
+  target_compile_options(test_uri PRIVATE /utf-8 /W4)
+else()
+  target_compile_options(test_uri PRIVATE -Wall -Wextra -Werror -fsanitize=address,undefined)
+  target_link_options(test_uri PRIVATE -fsanitize=address,undefined)
+endif()
+
+enable_testing()
+add_test(NAME test_uri COMMAND test_uri)

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shawky Call: روابط اختبار</title>
+<style>
+  body { font-family: "Segoe UI", Tahoma, sans-serif; max-width: 720px; margin: 24px auto; padding: 0 16px; background: #fff; color: #222; }
+  h1 { color: #b0881a; font-size: 22px; }
+  input { font-size: 16px; padding: 6px; width: 220px; direction: ltr; }
+  a { display: block; margin: 8px 0; padding: 10px; border: 1px solid #ddd; border-radius: 6px; text-decoration: none; color: #222; }
+  a:hover { border-color: #b0881a; }
+  code { direction: ltr; unicode-bidi: embed; display: block; font-size: 12px; color: #666; word-break: break-all; }
+  .bad a { background: #fff6f6; }
+</style>
+</head>
+<body>
+<h1>Shawky Call: روابط اختبار المرحلة الأولى</h1>
+<p>اكتب رقم داخلي (Extension) أو رقم موبايل للتجربة، وبعدين دوس على الروابط.</p>
+<p><label>الرقم: <input id="num" value="+20" placeholder="+2010xxxxxxxx أو رقم داخلي"></label></p>
+
+<h2>روابط سليمة (لازم تتصل)</h2>
+<div id="good"></div>
+
+<h2>روابط غلط (لازم تظهر رسالة ومفيش اتصال)</h2>
+<div id="bad" class="bad"></div>
+
+<script>
+const E = encodeURIComponent;
+function render() {
+  const n = document.getElementById('num').value.trim();
+  const good = [
+    ['رقم بصيغة +20 مع بيانات عربي', `shawkycall://call?phone=${n}&name=${E('زياد')}&salesman=sales01&project=${E('الإسكندرية')}&site_state=${E('طوب احمر')}&area=60&status=Fresh&lead_id=`],
+    ['رقم مُرمَّز %2B', `shawkycall://call?phone=${E(n)}`],
+    ['مع شرطة / في الآخر', `shawkycall://call/?phone=${E(n)}`],
+  ];
+  const bad = [
+    ['رقم فيه حروف', `shawkycall://call?phone=0100abc`],
+    ['أمر غير معروف', `shawkycall://exec?phone=${E(n)}`],
+    ['من غير رقم', `shawkycall://call?name=${E('زياد')}`],
+    ['محاولة حقن أمر', `shawkycall://call?phone=0100%22%20%26%20calc.exe`],
+    ['رقم أطول من 15', `shawkycall://call?phone=0123456789012345`],
+    ['ترميز غلط', `shawkycall://call?phone=%ZZ`],
+  ];
+  const draw = (id, list) => {
+    const el = document.getElementById(id); el.innerHTML = '';
+    for (const [label, href] of list) {
+      const a = document.createElement('a'); a.href = href;
+      a.textContent = label;
+      const c = document.createElement('code'); c.textContent = href; a.appendChild(c);
+      el.appendChild(a);
+    }
+  };
+  draw('good', good); draw('bad', bad);
+}
+document.getElementById('num').addEventListener('input', render);
+render();
+</script>
+</body>
+</html>

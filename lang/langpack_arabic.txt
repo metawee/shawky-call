@@ -1,0 +1,664 @@
+﻿Language Pack
+Last-Modified-Using: http://www.microsip.org/translation
+Language: Arabic
+Locale: 0x401
+RTL: 1
+
+; utf8
+
+[Call]
+اتصل
+[End Call]
+إنهاء المكالمة
+[Contacts]
+ارقام الاتصال
+[Account]
+الحساب
+[Settings]
+الإعدادات
+[Visit Website]
+زر الموقع
+[Exit]
+الخروج
+[Browse...]
+تصفح...
+تصفح...
+[Default]
+الافتراضي
+[Auto Answer]
+الرد آليا
+[Disable Local Account]
+الغاء تنشيط الحساب المحلي
+[OK]
+حسنا
+[Save]
+حفظ
+[Cancel]
+الغاء
+[SIP Server]
+SIP عنوان خادم
+[SIP Proxy]
+SIP بروكسي
+[Domain]
+النطاق
+[Password]
+كلمة السر
+[Connecting...]
+جاري التوصيل ...
+[Online]
+متصل
+[Local]
+محلي
+[Message]
+رسالة
+[Edit]
+تعديل
+[Delete]
+حذف
+[Add]
+إضافة
+[Bad Gateway]
+بوابة غير صالحة
+[Request Timeout]
+انتهت مهلة الطلب
+[Number]
+الرقم
+[Name]
+الاسم
+[Contact]
+رقم اتصال
+[Incoming Call]
+مكالمة واردة
+[Answer]
+رد
+[Decline]
+الرفض
+[Calling]
+جاري الاتصال
+[Connecting]
+جاري التوصيل
+[Connected]
+متصل
+[Auto]
+آلي
+[Transport]
+وسيلة النقل
+[Incorrect Password]
+كلمة المرور غير صحيحة
+[Public Address]
+العنوان العمومي
+[Media Encryption]
+تشفير الميديا
+[Disabled]
+معطل
+[Optional]
+اختياري
+[Mandatory]
+إجباري
+[STUN Server]
+خادم STUN
+[Presence Subscription]
+اشتراك الحضور
+[Ringing]
+يرن
+[Call ended]
+إنتهت المكالمة
+[Declined]
+تم الرفض
+[No address found]
+لم يتم العثور على العنوان
+[Request Terminated]
+تم الغاء الطلب
+[Away]
+غائب
+[Publish Presence]
+إعلان الحضور
+[Session Progress]
+تفاصيل الجلسة
+[Camera]
+كاميرا
+[Video Call]
+اتصال فيديو
+[Answer with Video]
+الرد مع الفيديو
+[View Log File]
+عرض ملف السجل
+[Microphone]
+مايكروفون
+[Speaker]
+مكبر الصوت
+[Video Codec]
+ترميز الفيديو
+[Check for Updates]
+البحث عن تحديث
+[Daily]
+يومي
+[Weekly]
+أسبوعي
+[Monthly]
+شهري
+[Quarterly]
+ربع سنوي
+[Never]
+ابدا
+[Update Available]
+تحديث متوفر
+[Invalid Number]
+الرابط  غير صالح
+[Offline]
+غير متصل
+[Single Call Mode]
+وضعية الإتصال الواحد
+[Local Video]
+فيديوا محلي
+[Call Transfer]
+تحويل المكالمة
+[Call transfered successfully, disconnecting call]
+حُولت المكالمة بنجاح، جاري فصل المكالمة
+[Hold]
+تعليق المكالمة
+[Transfer]
+نقل المكالمة
+[Sound Events]
+أحداث الصوت
+[Bitrate]
+معدل البت
+[Login]
+تسجيل الدخول
+[Enable Log File]
+فعّل ملف السجل
+[Duration]
+الفترة
+[Information]
+المعلومات
+[display password]
+إظهار كلمة المرور
+[From]
+من
+[To]
+إلى
+[Ring Device]
+جهاز الرنين
+[Service Unavailable]
+الخدمة غير متوفرة
+[Busy Here]
+الخط مشغول
+[Trying]
+يحاول
+[Method Not Allowed]
+الطريقة غير مسموحة
+[Not Found]
+غير موجود
+[Always on Top]
+دائما فى الأعلى
+[Connect]
+اتصل
+[Last Call]
+آخر مكالمة
+[Close All]
+أغلق الكل
+[Copy]
+نسخ
+[Select All]
+اختر الجميع
+[Display Name]
+الاسم
+[Remember Details]
+تذكر التفاصيل
+[No]
+لا
+[All Calls]
+جميع المكالمات
+[SIP Header]
+ترويسة SIP
+[Different User]
+مستخدم مختلف
+[Different Domain]
+نطاق مختلف
+[Different User or Domain]
+مستخدم أو نطاق مختلف
+[Different Remote Domain]
+نطاق مختلف بعيد
+[Deny Incoming]
+ارفض المكالمة الواردة
+[Allow IP Rewrite]
+IP السماح بإعادة كتابة ال
+[Directory of Users]
+دليل أرقام المستخدمين
+[Call on remote hold]
+المكالمة معلقة لدى المتصَل به
+[Call on local hold]
+المكالمة معلقة لدي
+[Call on hold]
+المكالمة معلقة
+[Call active]
+المكالمة جارية
+[Force Codec for Incoming]
+فرض الترميز للمكالمات للوارد
+[Menu]
+القائمة
+[Edit Account]
+تعديل الحساب
+[Add Account...]
+إضافة حساب...
+[Delete Account]
+امسح الحساب
+[Make Active]
+تنشيط
+[Are you sure you want to remove?]
+هل أنت متأكد أنك تريد الحذف؟
+[Call Pickup]
+التقاط المكالمة
+[Speaker Level]
+مستوى مكبر الصوت
+[Microphone Level]
+درجة صوت المايكرفون
+[Mute Speaker]
+كتم السماعات
+[Mute Microphone]
+كتم المايكرفون
+[Please fill out at least the required fields marked with *.]
+من فضلك قم بملئ الحقول المطلوبة و المشار لها ب *
+[Ask your SIP provider how to configure the account correctly.]
+اسأل مزود خدمة SIP عن كيفية ضبط الحساب بشكل صحيح.
+[Time]
+الوقت
+[Phone]
+الهاتف
+[Ringtone]
+صوت الرنين
+[Username]
+اسم المستخدم
+[Do you want to update now?]
+هل تريد التحديث الآن؟
+[Available Codecs]
+خيارات الترميز المتوفرة
+[Enabled Codecs]
+خيارات الترميز المفعلة
+[Logs]
+سجل المكالمات
+[Random Popup Position]
+موقع نافذة إخطارعشوائي
+[Attended Transfer]
+نقل المكالمة مع الإخطار
+[Enable Local Account]
+تفعيل الحساب المحلي
+[Send Crash Report]
+إرسال تقرير عن خطأ
+[Account Name]
+اسم الحساب
+[Invite to Conference]
+دعوة للمؤتمر
+[Merge]
+دمج
+[Separate]
+منفصل
+[Disconnect]
+فصل الاتصال
+[DTMF Method]
+طريقة DTMF
+[Voicemail Number]
+رقم البريد الصوتي
+[Disable Session Timers]
+إلغاء مؤقتات الجلسة
+[Microphone Amplification]
+تضخيم صوت المايكروفون
+[Software Level Adjustment]
+درجة تحمل البرنامج
+[Shortcuts]
+اختصارات
+[Enable]
+تفعيل
+[Label]
+العلامة
+[Type]
+نوع
+[Bottom Position]
+الوضع السفلي
+[You need to restart application for the changes to take effect.]
+يجب عليك إعادة تشغيل البرنامج لتطبيق التعديلات الجديدة
+[Handle Media Buttons]
+التحكم بأزرار الميديا
+[Bring to Front on Incoming Call]
+جلب إلى الأمام عند ورود مكالمة
+[Help]
+المساعدة
+[Video Bitrate]
+معدل بت الفيديو
+[Control Button]
+زر التحكم
+[Do Not Disturb]
+عدم الإزعاج
+[Source Port]
+منفذ المصدر
+[RTP Ports]
+منافذ RTP
+[Import]
+استيراد
+[Blind Transfer]
+نقل المكفوفين
+[Redial]
+إعادة الاتصال
+[Backspace]
+للوراء
+[Clear]
+مسح
+[Use Space key to enable selected codec]
+انقر على زر المسافة لتفعيل الترميز المختار
+[Use Delele key to disable selected codec]
+انقر على زر المسح لإلغاء تفعيل الترميز المختار
+[Conference]
+مؤتمر
+[Dialing Prefix]
+بداية رقم الاتصال
+[Register Refresh]
+تحديث التسجيل
+[Keep-Alive]
+البقاء نشط
+[Ringtone Volume]
+صوت الرنين
+[Call Recording]
+تسجيل المكالمة
+[Nameserver]
+مخدم الاسم
+[Default List Action]
+عمل القائمة الافتراضية
+[Edit Local Account]
+تعديل الحساب المحلي
+[Export]
+تصدير
+[Call Waiting]
+خدمة انتظار المكالمات
+[Ready]
+جاهز
+[Not online]
+غير متصل
+[On the phone]
+على الهاتف
+[First Name]
+الاسم الأول
+[Last Name]
+الكنية
+[Phone Number]
+رقم الهاتف
+[Mobile Number]
+رقم الهاتف المحمول
+[E-mail Address]
+عنوان البريد الإلكتروني
+[Address]
+العنوان
+[City]
+المدينة
+[State]
+الحالة
+[Postal Code]
+الكود البريدى
+[Comment]
+تعليق
+[close window to ignore call]
+أغلق النافذة لتجاهل المكالمة
+[Headset Support]
+دعم سماعة الرأس
+[sec]
+ثانية
+[Call Forwarding]
+تحويل المكالمات
+[Are you sure you want to delete?]
+هل أنت متأكد أنك تريد الحذف؟
+[Delete Contact]
+حذف رقم الاتصال
+[Account or credentials not found.]
+الحساب أو بيانات الاعتماد غير موجود
+[Please fill out all required fields.]
+يرجى ملئ جميع الحقول المطلوبة.
+[Dial Plan]
+خطة الاتصال الهاتفي
+[Disable Video]
+تعطيل الفيديو
+[Disable Messaging]
+تعطيل المراسلة
+[Register]
+تسجيل
+[Unregister]
+غير مسجل
+[Options]
+الخيارات
+[Delay]
+تأخير
+[Caller Number]
+رقم المتصل
+[Unable to find default audio device]
+لم يتم العثور على جهاز الصوت الافتراضي
+[Network is unreachable]
+الشبكة غير متاحة
+[Microphone access is blocked. Please check your antivirus settings or security software.]
+اسمح بالوصول إلى الميكروفون في إعدادات مكافحة الفيروسات.
+[Microphone access is turned off. Enable it in Windows Settings.]
+إصلاح إذن الميكروفون في إعدادات Windows (إعدادات Windows =&gt; الخصوصية =&gt; الميكروفون).
+[Canceled]
+ألغيت
+[Softphone is not initialized. Check your settings.]
+لم تتم تهيئة الهاتف الذكي. تحقق من إعداداتك.
+[Unable to initialize network sockets.]
+غير قادر على تهيئة مآخذ الشبكة.
+[Unable to connect to the remote server.]
+تعذر الاتصال بالخادم البعيد.
+[Starred]
+مميز بنجمة
+[Run at System Startup]
+تشغيل عند بدء تشغيل النظام
+[Run Batch]
+تشغيل الدفعة
+[Call URL]
+عنوان URL للاتصال
+[Call All]
+اتصل بالجميع
+[Custom]
+مخصص
+[Add Contact]
+إضافة جهة اتصال
+[Incorrect dialing or non-existent number]
+اتصال غير صحيح أو رقم غير موجود
+[End]
+إنهاء المكالمة
+[Address Incomplete]
+العنوان غير مكتمل
+[Not acceptable here]
+غير مقبول هنا
+[Idle]
+عاطل
+[Toggle]
+تبديل
+[Connection refused]
+رفض اتصال
+[Connection timed out]
+انتهت مدة الاتصال
+[Cannot get IP address of the called host]
+لا يمكن الحصول على عنوان IP للمضيف الذي تم الاتصال به
+[Answered elsewhere]
+تم الرد في مكان آخر
+[Missed call]
+مكالمة فائتة
+[Do you want to delete user data and program settings? This action cannot be undone.]
+هل تريد حذف بيانات المستخدم وإعدادات البرنامج؟ لا يمكن التراجع عن هذا الإجراء.
+[Unavailable]
+غير متوفره
+[Call Limit]
+حد المكالمة
+[Hide Caller ID]
+إخفاء معرف المتصل
+[Feature Codes]
+رموز الميزة
+[Connection Failed]
+فشل الاتصال
+[The server returned an error code:]
+أعاد الخادم رمز الخطأ:
+[The received data cannot be recognized]
+لا يمكن التعرف على البيانات المستلمة
+[Multi Monitor Support]
+دعم الشاشات المتعددة
+[Handle IP changes]
+التعامل مع تغييرات IP
+[Are you sure you want to delete the selected items?]
+هل أنت متأكد من رغبتك في حذف العناصر المحددة؟
+[Delete Call Log]
+حذف سجل المكالمات
+[Accounts]
+الحسابات
+[Selected Accounts]
+الحسابات المحددة
+[Use Space key to add account]
+استخدم مفتاح المسافة لإضافة حساب
+[Use Delele key to remove account]
+استخدم مفتاح الحذف لإزالة الحساب
+[Export Configuration]
+تصدير الإعدادات
+[Import Configuration]
+استيراد الإعدادات
+[Export Call Log]
+تصدير سجل المكالمات
+[Import Call Log]
+استيراد سجل المكالمات
+[Export Contacts]
+تصدير جهات الاتصال
+[Import Contacts]
+استيراد جهات الاتصال
+[Export/Import]
+تصدير/استيراد
+[Soft]
+ناعم
+[Hard]
+صعب
+[Active Calls]
+المكالمات النشطة
+[You already have an active call with this number.]
+لديك بالفعل مكالمة جارية مع هذا الرقم.
+[Attended transfer is not available in single-call mode. Disable this mode or use PBX feature codes.]
+لا تتوفر خدمة التحويل المباشر في وضع المكالمة الواحدة. قم بتعطيل هذا الوضع أو استخدم رموز ميزات نظام الهاتف المركزي (PBX).
+[Transfer Call to]
+تحويل المكالمة إلى
+[Disable name lookup in directory]
+تعطيل البحث عن الأسماء في الدليل
+[Unauthorized]
+غير مصرح به
+[Merge All]
+دمج الكل
+[Separate All]
+افصل الكل
+[Auto Conference]
+مؤتمر السيارات
+[Updating to the latest version may resolve this issue.]
+قد يؤدي التحديث إلى أحدث إصدار إلى حل هذه المشكلة.
+[Open the download page now?]
+افتح صفحة التنزيل الآن؟
+[The application may have been launched from an unsafe location. Please download the application from the official website.]
+ربما تم تشغيل التطبيق من موقع غير آمن. يرجى تنزيل التطبيق من الموقع الرسمي.
+[See the Freezes or Crashes help section.]
+راجع قسم المساعدة الخاص بالتجمد أو الأعطال.
+[Open troubleshooting page?]
+هل تريد فتح صفحة استكشاف الأخطاء وإصلاحها؟
+[Update now to stay secure and take advantage of the latest improvements.]
+قم بالتحديث الآن للحفاظ على أمانك والاستفادة من أحدث التحسينات.
+[Thanks for testing the beta!]
+شكراً لاختبارك النسخة التجريبية!
+[The final version is now available. Download it from our website.]
+النسخة النهائية متاحة الآن. حمّلها من موقعنا الإلكتروني.
+[Contact already exists]
+يوجد اتصال بالفعل
+[Microphone and speakers are required.]
+يلزم وجود ميكروفون وسماعات.
+[No microphone or audio output device was detected. Please connect them to make calls.]
+لم يتم العثور على ميكروفون أو جهاز إخراج صوت. يرجى توصيلهما لإجراء المكالمات.
+[Network connection is not available.]
+الاتصال بالشبكة غير متاح.
+[Please check that your firewall or antivirus is not blocking this application.]
+يرجى التأكد من أن جدار الحماية أو برنامج مكافحة الفيروسات الخاص بك لا يحظر هذا التطبيق.
+[A contact with this phone number already exists. Do you want to replace it?]
+يوجد بالفعل جهة اتصال بهذا الرقم. هل ترغب في استبداله؟
+[Activate or add an account in the main menu of the softphone.]
+قم بتفعيل أو إضافة حساب في القائمة الرئيسية للهاتف البرمجي.
+[A newer version may be available]
+قد يتوفر إصدار أحدث
+[Please visit our website to check for updates.]
+يرجى زيارة موقعنا الإلكتروني للاطلاع على التحديثات.
+[This version is outdated]
+هذه النسخة قديمة
+[This version is no longer supported]
+لم يعد هذا الإصدار مدعومًا
+[Please visit our website to download the latest version.]
+يرجى زيارة موقعنا الإلكتروني لتنزيل أحدث إصدار.
+[Try the Lite version or update your graphics and camera drivers.]
+جرب النسخة الخفيفة أو قم بتحديث برامج تشغيل بطاقة الرسومات والكاميرا.
+[A critical error occurred in the video subsystem]
+حدث خطأ حرج في النظام الفرعي للفيديو
+[The application crashed]
+تعطل التطبيق
+[Unable to create media session]
+تعذر إنشاء جلسة وسائط
+[Call failed:]
+فشلت المكالمة:
+[Unsupported codecs, encryption methods, or other media parameters]
+برامج الترميز غير المدعومة، أو طرق التشفير، أو معلمات الوسائط الأخرى.
+[Server error]
+خطأ في الخادم
+[unencrypted]
+غير مشفر
+[This could be caused by driver issues, or other unexpected system problems.]
+قد يكون سبب ذلك مشاكل في برنامج التشغيل، أو مشاكل أخرى غير متوقعة في النظام.
+[A critical error occurred in the audio subsystem]
+حدث خطأ حرج في النظام الفرعي الصوتي
+[A critical error occurred in the module on your PC]
+حدث خطأ حرج في الوحدة النمطية على جهاز الكمبيوتر الخاص بك
+[Unable to send the network request.]
+تعذر إرسال طلب الشبكة.
+[If you don't have your account details, contact your IP telephony provider to obtain them.]
+إذا لم تكن لديك تفاصيل حسابك، فاتصل بمزود خدمة الاتصالات عبر بروتوكول الإنترنت (IP) للحصول عليها.
+[Phone:]
+هاتف:
+[Mobile:]
+متحرك:
+[Search]
+يبحث
+[This will disconnect you from the PBX server. You will no longer be able to make or receive calls. Are you sure?]
+سيؤدي هذا إلى قطع اتصالك بخادم نظام الهاتف. لن تتمكن بعد ذلك من إجراء أو استقبال المكالمات. هل أنت متأكد؟
+[You will no longer be able to make outgoing calls using this account. Are you sure?]
+لن تتمكن بعد الآن من إجراء مكالمات صادرة باستخدام هذا الحساب. هل أنت متأكد؟
+[Establishing connection...]
+جارٍ إنشاء الاتصال...
+[Incoming call from]
+مكالمة واردة من
+[Connected to]
+متصل بـ
+[Call transfer]
+تحويل المكالمات
+[Database Access Error]
+خطأ في الوصول إلى قاعدة البيانات
+[Database Write Error]
+خطأ في كتابة قاعدة البيانات
+[The call could not be loaded due to a database error.]
+تعذر تحميل المكالمة بسبب خطأ في قاعدة البيانات.
+[The call could not be added to call history.]
+لم تتم إضافة المكالمة إلى سجل المكالمات.
+[The call could not be updated in call history.]
+تعذر تحديث المكالمة في سجل المكالمات.
+[Call history could not be imported due to a database error.]
+تعذر استيراد سجل المكالمات بسبب خطأ في قاعدة البيانات.
+[Call history could not be exported due to a database error.]
+تعذر تصدير سجل المكالمات بسبب خطأ في قاعدة البيانات.
+[The call could not be deleted from call history.]
+لم يكن بالإمكان حذف المكالمة من سجل المكالمات.
+[The selected calls could not be deleted from call history.]
+تعذر حذف المكالمات المحددة من سجل المكالمات.
+[Call history could not be cleared due to a database error.]
+تعذر مسح سجل المكالمات بسبب خطأ في قاعدة البيانات.
+[Call history could not be loaded due to a database error.]
+تعذر تحميل سجل المكالمات بسبب خطأ في قاعدة البيانات.
+[Camera access for desktop apps is disabled]
+تم تعطيل إمكانية الوصول إلى الكاميرا لتطبيقات سطح المكتب
+[To make video calls, allow desktop apps to access your camera in Windows settings.]
+لإجراء مكالمات الفيديو، اسمح لتطبيقات سطح المكتب بالوصول إلى الكاميرا في إعدادات ويندوز.
+[Do not show this message again]
+عدم إظهار هذه الرسالة مرة أخرى
+[Disable Account?]
+تعطيل الحساب؟
+[]
