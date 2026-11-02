@@ -68,6 +68,9 @@ jobs:
         shell: pwsh
         run: |
           $exe = (Resolve-Path out/ShawkyCall/*.exe).Path
+          foreach ($f in "ringtone.wav","ringing.wav","ringing2.wav","hangup.wav","msgin.wav","msgout.wav","langpack_arabic.txt") {
+            if (-not (Test-Path "out/ShawkyCall/$f")) { throw "Package is missing $f" }
+          }
           Remove-Item -Recurse -Force HKCU:\Software\Classes\shawkycall -ErrorAction SilentlyContinue
           $p = Start-Process -FilePath $exe -ArgumentList "/minimized" -PassThru
           Start-Sleep -Seconds 15
